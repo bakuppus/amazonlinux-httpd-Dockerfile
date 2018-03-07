@@ -13,5 +13,5 @@ RUN service httpd start
 EXPOSE 80
 
 CMD ["service httpd restart"]
-
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 ENTRYPOINT service httpd restart && /bin/bash
