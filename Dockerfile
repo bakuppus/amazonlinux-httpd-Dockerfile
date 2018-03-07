@@ -8,10 +8,10 @@ RUN echo "Jenkins Docker Build and Publish " > /var/www/html/index.html
 
 
 #Restart jenkins server
-RUN service httpd start
+RUN service httpd restart
 
 EXPOSE 80
 
-CMD ["service httpd restart"]
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
-ENTRYPOINT service httpd restart && /bin/bash
+
+CMD ["sh", "-c", "tail -f /dev/null"]
+
