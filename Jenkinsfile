@@ -20,7 +20,6 @@ pipeline {
              script {
                 def server = Artifactory.server 'server'
                 def rtDocker = Artifactory.docker server: server
-                def buildInfo
                 server.bypassProxy = true
                 def buildInfo = rtDocker.push 'http://jfrog.baladigitalcloud.com:80/artifactory/dockerdemo/hello-world:latest', 'dockerdemo'
                 server.publishBuildInfo buildInfo
