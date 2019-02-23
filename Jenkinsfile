@@ -21,7 +21,7 @@ pipeline {
                 def server = Artifactory.server 'server'
                 def rtDocker = Artifactory.docker server: server
                 server.bypassProxy = true
-                def buildInfo = rtDocker.push '18.233.158.138:8081/dockerdemo/hello-world', 'dockerdemo'
+                def buildInfo = rtDocker.push '3.16.108.69:8081/kierandocker/hello-kieran', 'kierandocker'
                 server.publishBuildInfo buildInfo
     }
   }
