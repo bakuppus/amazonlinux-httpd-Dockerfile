@@ -19,7 +19,7 @@ pipeline {
            steps {
              script {
                 def server = Artifactory.server 'Jfrog'
-                def rtDocker = Artifactory.docker server: server
+                def rtDocker = Artifactory.docker server: Jfrog
                 server.bypassProxy = true
                 def buildInfo = rtDocker.push '3.16.108.69:8081/kierandocker/hello-kieran', 'kierandocker'
                 server.publishBuildInfo buildInfo
