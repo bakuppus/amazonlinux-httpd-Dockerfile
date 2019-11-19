@@ -1,4 +1,4 @@
-FROM amazonlinux:latest
+FROM centos7:latest
 
 #install
 RUN yum install httpd -y
