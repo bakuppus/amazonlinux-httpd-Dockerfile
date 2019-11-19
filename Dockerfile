@@ -1,4 +1,4 @@
-FROM centos7:latest
+FROM centos:latest
 
 #install
 RUN yum install httpd -y
