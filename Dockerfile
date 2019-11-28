@@ -1,5 +1,9 @@
 FROM amazonlinux:latest
 
+RUN cat /etc/resolv.conf
+
+RUN echo "  "
+
 #install
 RUN yum install httpd -y
 
